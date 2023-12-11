@@ -13,7 +13,8 @@ describe('Issue delete', () => {
     });
 
   })
-  it.only('Test Case 1 delete issue successfully', () => {
+  
+  it('Test Case 1 delete issue successfully', () => {
     //assert issue is open
    cy.get('[data-testid = "modal:issue-details"]').should('be.visible')
     //delete 
@@ -23,15 +24,16 @@ describe('Issue delete', () => {
     //assert delete confirmation dialogue is not visible
     cy.reload();
     cy.contains(deleteTitle).should('not.exist');
-
     // issue should no longer exist
     cy.visit(urltest);
     cy.contains(issueTitle).should('not.exist');
   });
 
+
+
   it('Test Case 2 cancel delete issue successfully', () => {
     //assert issue is open
-   
+    cy.get('[data-testid = "modal:issue-details"]').should('be.visible')
     //delete 
     cy.get('[data-testid="icon:trash"]').click()
     cy.contains(deleteTitle).should('exist');
