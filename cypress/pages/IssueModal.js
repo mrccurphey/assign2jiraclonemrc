@@ -70,7 +70,7 @@ class IssueModal {
     }
 
     ensureIssueIsVisibleOnBoard(issueTitle) {
-        cy.get(this.issueDetailModal).should('not.exist');
+        cy.get(this.issueDetailModal).should('exist');
         cy.reload();
         cy.contains(issueTitle).should('be.visible');
     }
