@@ -22,6 +22,7 @@ describe('Issue delete', () => {
     //assert delete confirmation dialogue is not visible
     // issue should no longer exist
     IssueModal.confirmDeletion()
+    IssueModal.ensureIssueIsNotVisibleOnBoard(issueTitle)
 
   });
 
