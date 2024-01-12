@@ -46,7 +46,7 @@ class IssueModal {
 
     createIssue(issueDetails) {
         this.getIssueModal().within(() => {
-            this.selectIssueType(issueDetails.type);
+            this.selectIssueType(issueDetails.issueType);
             this.editDescription(issueDetails.description);
             this.editTitle(issueDetails.title);
             this.selectAssignee(issueDetails.assignee);
